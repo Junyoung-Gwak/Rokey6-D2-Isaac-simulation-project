@@ -5,12 +5,6 @@
 
 ---
 
-##📊 시스템 설계 및 플로우 차트
-
-
-
----
-
 ## 📌 주요 기능 (Key Features)
 
 ### 1. 클라우드 연동 실시간 WMS (Cloud-Integrated WMS)
@@ -31,15 +25,22 @@
 
 ---
 
-## 🛠️ 시스템 설계 (System Architecture)
+## 🛠️ 시스템 설계 및 플로우 차트 (System Architecture & Flowchart)
 
 전체 시스템은 크게 **Cloud DB(데이터 동기화)**, **Mission Controller(관제 및 판단)**, **Isaac Sim(디지털 트윈 제어)** 세 파트로 구성됩니다.
 
-1. **Cloud DB:** 사용자의 주문과 물품 재고 데이터를 관리하며 관제 서버와 양방향 통신합니다.
-2. **Mission Controller (`iw_hub_controller`):** 맵 정보를 바탕으로 로봇들의 이동 경로를 계산하고 로봇팔에 작업 지시를 내립니다.
-3. **Isaac Sim (`warehouse.py`):** 전달받은 제어 명령을 실제 로봇(AGV, UR10, 드론)의 물리적 움직임으로 구현하고 피드백을 반환합니다.
+### 1. 시스템 전체 아키텍처
+![System Architecture](./System%20Architecture.jpg)
 
+### 2. 전체 공정 플로우 차트 (Simple)
+주문 수신부터 라스트 마일 배송(드론)까지의 전체적인 흐름입니다.
+![Flowchart Simple](./Flowchart_Simple.jpg)
 
+### 3. 상세 통신 플로우 차트 (SI)
+ROS 2 토픽 통신 및 DB 연동을 포함한 상세 시스템 플로우입니다.
+![Flowchart SI](./Flowchart_SI.jpg)
+
+---
 
 ## 💻 개발 환경 (Environment)
 
